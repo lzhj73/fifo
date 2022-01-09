@@ -32,7 +32,7 @@ module write(full,waddr,wptr,wclk,wen,wrstn,rptr);
 
     always@(posedge wclk,negedge wrstn)
         if(!wrstn)
-            full_reg<=0;
+            full_reg<=1'b0;
         else
             full_reg<=(wptr[A_SIZE]!=wrptr2[A_SIZE])&&(wptr[A_SIZE-1]!=wrptr2[A_SIZE-1])&&(wptr[A_SIZE-2:0]==wrptr2[A_SIZE-2:0]);
 

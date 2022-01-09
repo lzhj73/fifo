@@ -32,7 +32,7 @@ module read(empty,raddr,rptr,rclk,ren,rrstn,wptr);
 
     always@(posedge rclk,negedge rrstn)
         if(!rrstn)
-            empty_reg<=1;
+            empty_reg<=1'b1;
         else
             empty_reg<=(rptr==rwptr2);
 
